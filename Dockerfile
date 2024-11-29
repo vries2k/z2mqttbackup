@@ -13,5 +13,9 @@ RUN python3 -m venv /app/venv
 # Activate the virtual environment and install dependencies
 RUN /app/venv/bin/pip install schedule requests docker paho-mqtt
 
+# Make Dir and download script
+RUN mkdir /script
 # Activate the virtual environment on container startup
 CMD ["/bin/bash"]
+
+
