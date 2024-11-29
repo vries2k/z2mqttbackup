@@ -13,19 +13,19 @@ from threading import Timer
 
 # Configuration - Update these values with your own settings
 config = {
-    "mqtt_broker": "YOUR_MQTT_BROKER_IP",
-    "mqtt_port": 1883,
-    "mqtt_user": "YOUR_MQTT_USERNAME",
-    "mqtt_password": "YOUR_MQTT_PASSWORD",
-    "zigbee2mqtt_topic": "zigbee2mqtt/#",
-    "backup_dir": "/path/to/your/backup/directory",
-    "cloud_dir": "your_remote_cloud_directory",
-    "discord_webhook_url": "your_discord_webhook_url",
-    "notification_interval": 300,  # Time between notifications in seconds
-    "uptime_threshold": 300,  # Uptime threshold for zigbee2mqtt restart in seconds
-    "offline_device_threshold": 10,  # Number of offline devices to trigger restart
-    "check_interval": 10,  # Interval for checking container status in seconds
-    "backup_time": "01:45"  # Time for daily backup
+    "mqtt_broker": os.getenv("MQTT_BROKER", "default_broker"),
+    "mqtt_port": int(os.getenv("MQTT_PORT", 1883)),
+    "mqtt_user": os.getenv("MQTT_USER", ""),
+    "mqtt_password": os.getenv("MQTT_PASSWORD", ""),
+    "zigbee2mqtt_topic": os.getenv("ZIGBEE2MQTT_TOPIC", "zigbee2mqtt/#"),
+    "backup_dir": os.getenv("BACKUP_DIR", "/default/backup/dir"),
+    "cloud_dir": os.getenv("CLOUD_DIR", "/default/cloud/dir"),
+    "discord_webhook_url": os.getenv("DISCORD_WEBHOOK_URL", ""),
+    "notification_interval": int(os.getenv("NOTIFICATION_INTERVAL", 300)),
+    "uptime_threshold": int(os.getenv("UPTIME_THRESHOLD", 300)),
+    "offline_device_threshold": int(os.getenv("OFFLINE_DEVICE_THRESHOLD", 10)),
+    "check_interval": int(os.getenv("CHECK_INTERVAL", 10)),
+    "backup_time": os.getenv("BACKUP_TIME", "01:45")
 }
 
 # Docker client
