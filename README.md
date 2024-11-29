@@ -1,8 +1,6 @@
-# Zigbee2MQTT Monitor and Backup Script
+# Zigbee2MQTT Monitor and Backup Script in Docker
 
 This script is designed to monitor the state of Zigbee2MQTT (Z2M) devices, automate backups, and handle device connectivity issues that may occur due to interferences. It can restart services and notify you through Discord when specific conditions are met.
-
-![Zigbee2MQTT Monitor](zigbee2mqtt_monitor.png)
 
 ## Features
 
